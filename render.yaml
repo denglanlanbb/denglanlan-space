@@ -1,0 +1,30 @@
+# Render Blueprint - 邓兰兰工作台云端部署
+# 使用方法：在 Render Dashboard 中创建新的 Blueprint，选择本仓库
+# Render 会自动读取此文件创建 Web Service
+
+services:
+  - type: web
+    name: deng-lanlan-workbench
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false  # 在 Render Dashboard 手动填写
+      - key: JWT_SECRET
+        sync: false
+      - key: ADMIN_USERNAME
+        value: admin
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: BACKUP_ENCRYPTION_KEY
+        sync: false
+      - key: RESET_PASSWORD
+        value: false
+      - key: JWT_EXPIRES_IN
+        value: 7d
