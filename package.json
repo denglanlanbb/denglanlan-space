@@ -1,0 +1,24 @@
+{
+  "name": "deng-lanlan-workbench-cloud",
+  "version": "1.0.0",
+  "description": "邓兰兰工作台 - 2027中级会计学习 - 云端部署版",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "db:init": "node scripts/init-db.js",
+    "test": "node scripts/verify.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "pg": "^8.12.0",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "helmet": "^7.1.0",
+    "express-rate-limit": "^7.4.0",
+    "morgan": "^1.10.0"
+  }
+}
